@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19"-->
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+   <left>
+      <VBox minWidth="-Infinity" prefHeight="400.0" prefWidth="160.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="181.0" text="Repository Commands">
+               <font>
+                  <Font name="Century" size="13.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#showAll" prefHeight="25.0" prefWidth="164.0" text="Show All" />
+            <Button mnemonicParsing="false" onAction="#addPatient" prefHeight="25.0" prefWidth="181.0" text="Add Patient">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#addAppointment" prefHeight="25.0" prefWidth="177.0" text="Add Appointment" />
+            <Button mnemonicParsing="false" onAction="#updatePatient" prefHeight="25.0" prefWidth="246.0" text="Update Patient">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#updateAppointment" prefHeight="25.0" prefWidth="224.0" text="Update Appointment" />
+            <Button mnemonicParsing="false" onAction="#deletePatient" prefHeight="25.0" prefWidth="177.0" text="Delete Patient">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="25.0" prefWidth="240.0" text="Delete Appointment" />
+            <Label prefHeight="17.0" prefWidth="192.0" text="Choose report">
+               <font>
+                  <Font name="Century" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#showAftApps" prefHeight="25.0" prefWidth="285.0" text="Afternoon Appointments" />
+            <Button mnemonicParsing="false" onAction="#adultP" prefHeight="25.0" prefWidth="197.0" text="Adult Patients" />
+            <Button mnemonicParsing="false" onAction="#PAlph" prefHeight="25.0" prefWidth="226.0" text="Patients Alphabetically" />
+         </children></VBox>
+   </left>
+   <right>
+      <VBox fx:id="rightMenu" onKeyPressed="#eventHandler" prefHeight="400.0" prefWidth="172.0" spacing="10.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <VBox fx:id="centerMenu" prefHeight="207.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <Label prefHeight="21.0" prefWidth="246.0" text="All Patients and Appointments" textFill="#472fff">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="textUp" minHeight="-Infinity" prefHeight="300.0" prefWidth="386.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextArea>
+            <Label prefHeight="17.0" prefWidth="393.0" text="Reports" textFill="#dd00ff">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="textDown" minHeight="-Infinity" prefHeight="300.0" prefWidth="286.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
