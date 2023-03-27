@@ -10,7 +10,7 @@
 
 <!--xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19"-->
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox minWidth="-Infinity" prefHeight="400.0" prefWidth="160.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>

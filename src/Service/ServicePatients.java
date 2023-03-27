@@ -4,15 +4,16 @@ import Domain.Appointment;
 import Domain.CompareByAge;
 import Domain.Patient;
 import Repository.AppointmentRepo;
+import Repository.MemoryRepo;
 import Repository.PatientRepo;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class ServicePatients {
-    private PatientRepo ptRepo;
-    private AppointmentRepo appRepo;
-    public ServicePatients(PatientRepo PtRepo, AppointmentRepo AppRepo){
+    private MemoryRepo<Integer,Patient> ptRepo;
+    private MemoryRepo<String,Appointment> appRepo;
+    public ServicePatients(MemoryRepo<Integer,Patient> PtRepo, MemoryRepo<String,Appointment> AppRepo){
         this.ptRepo=PtRepo;
         this.appRepo=AppRepo;
     }
@@ -20,11 +21,11 @@ public class ServicePatients {
         this(new PatientRepo(),new AppointmentRepo());
     }
 
-    public PatientRepo getPtRepo() {
+    public MemoryRepo<Integer, Patient> getPtRepo() {
         return ptRepo;
     }
 
-    public AppointmentRepo getAppRepo() {
+    public MemoryRepo<String, Appointment> getAppRepo() {
         return appRepo;
     }
 

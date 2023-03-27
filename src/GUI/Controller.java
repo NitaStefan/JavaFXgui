@@ -3,7 +3,9 @@ package GUI;
 import Domain.Appointment;
 import Domain.Patient;
 import Repository.AppointmentRepo;
+import Repository.AppointmentRepoDB;
 import Repository.PatientRepo;
+import Repository.PatientRepositoryDB;
 import Service.ServicePatients;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,33 +34,37 @@ public class Controller {
     private TextField tf1,tf2,tf3,tf4,tf5;
     @FXML
     private Button helper;
-    private ServicePatients service=load();
+    private ServicePatients service;
 
-    public ServicePatients load()
-    {
-        Patient p1=new Patient(23,"John",34,"headache");
-        Patient p2=new Patient(86,"Jeremy",17,"allergies");
-        Patient p3=new Patient(76,"Sam",42,"Pneumonia");
-        Patient p4=new Patient(59,"Alfred",16,"Acne");
-        Appointment a1=new Appointment("sl", LocalDateTime.of(2022,1,19,13,0),86);
-        Appointment a2=new Appointment("2p",LocalDateTime.of(2023,2,11,17,40),23);
-        Appointment a3=new Appointment("m4",LocalDateTime.of(2023,1,7,8,30),76);
-        Appointment a4=new Appointment("tn",LocalDateTime.of(2022,12,4,15,45),86);
-        Appointment a5=new Appointment("uu",LocalDateTime.of(2023,6,1,11,45),59);
-        PatientRepo pRepo=new PatientRepo();
-        AppointmentRepo aRepo=new AppointmentRepo();
-        pRepo.add(23,p1);
-        pRepo.add(86,p2);
-        pRepo.add(76,p3);
-        pRepo.add(59,p4);
-        aRepo.add("sl",a1);
-        aRepo.add("2p",a2);
-        aRepo.add("m4",a3);
-        aRepo.add("tn",a4);
-        aRepo.add("uu",a5);
-        ServicePatients service=new ServicePatients(pRepo,aRepo);
-        return service;
+    public Controller(ServicePatients service) {
+        this.service = service;
     }
+
+    /*public ServicePatients load()
+        {
+            Patient p1=new Patient(23,"John",34,"headache");
+            Patient p2=new Patient(86,"Jeremy",17,"allergies");
+            Patient p3=new Patient(76,"Sam",42,"Pneumonia");
+            Patient p4=new Patient(59,"Alfred",16,"Acne");
+            Appointment a1=new Appointment("sl", LocalDateTime.of(2022,1,19,13,0),86);
+            Appointment a2=new Appointment("2p",LocalDateTime.of(2023,2,11,17,40),23);
+            Appointment a3=new Appointment("m4",LocalDateTime.of(2023,1,7,8,30),76);
+            Appointment a4=new Appointment("tn",LocalDateTime.of(2022,12,4,15,45),86);
+            Appointment a5=new Appointment("uu",LocalDateTime.of(2023,6,1,11,45),59);
+            PatientRepositoryDB pRepo=new PatientRepositoryDB("src/Repository/Hospital.db");
+            AppointmentRepoDB aRepo=new AppointmentRepoDB("src/Repository/Hospital.db");
+            pRepo.add(23,p1);
+            pRepo.add(86,p2);
+            pRepo.add(76,p3);
+            pRepo.add(59,p4);
+            aRepo.add("sl",a1);
+            aRepo.add("2p",a2);
+            aRepo.add("m4",a3);
+            aRepo.add("tn",a4);
+            aRepo.add("uu",a5);
+            ServicePatients service=new ServicePatients(pRepo,aRepo);
+            return service;
+        }*/
     @FXML
     void eventHandler(KeyEvent event) {
         if(tf1.getPromptText()!=null && tf2.getPromptText()==null)
